@@ -3,11 +3,7 @@ using namespace std;
 
 int main()
 {
-	char Arr[] = "Hello";
-	
-	cout<<Arr;
-	printf("%s\n",Arr);
+	cout<<"Jay Ganesh"<<endl;
 	
 	return 0;
-	
 }

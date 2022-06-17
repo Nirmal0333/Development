@@ -1,42 +1,36 @@
 #include<stdio.h>
 #include<stdlib.h>
-//postive&negative
-int Maximum(int Arr[],int iLength)
+
+int Minimum(int Arr[],int iLength)
 {
-	int iMax = Arr[0];//0th element of array
-	int iCnt = 0;
+	int iMin = Arr[0],iCnt = 0;
+	
 	for(iCnt = 0;iCnt<iLength;iCnt++)
 	{
-		
-		if(iMax<Arr[iCnt])
+		if(iMin>Arr[iCnt])
 		{
-			iMax = Arr[iCnt];
+			iMin = Arr[iCnt];
 		}
 	}
-	return iMax;
-	
+	return iMin;
 }
 int main()
-{   
-    int iCnt = 0;
-	int iSize = 0;
-	int iRet = 0;
+{
+	int iValue = 0, iRet = 0, iCnt = 0;
 	int *ptr = NULL;
 	
-	printf("Enter the number of elements\n");
-	scanf("%d",&iSize);
+	printf("Enter the number\n");
+	scanf("%d",&iValue);
 	
-	ptr = (int *)malloc(iSize * sizeof(int));
-    
-	printf("Enter the values\n");
-	for(iCnt = 0;iCnt<iSize;iCnt++)
+	ptr = (int *)malloc(iValue *sizeof(int));
+	printf("Enter the elements of array:\n");
+	for(iCnt = 0;iCnt<iValue;iCnt++)
 	{
 		scanf("%d",&ptr[iCnt]);
 	}
 	
-	iRet = Maximum(ptr,iSize);
-	
-	printf("Maximum is:%d\n",iRet);
+	iRet = Minimum(ptr,iValue);
+	printf("Minimum number is:%d\n",iRet);
 	free(ptr);
 	
 	return 0;

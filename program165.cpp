@@ -5,9 +5,13 @@ int main()
 {
 	char Arr[] = "Hello";
 	
-	cout<<Arr;
-	printf("%s\n",Arr);
+	int i = 0;
+	
+	while(Arr[i] != '\0')
+	{
+		cout<<Arr[i]<<endl;
+		i++;
+	}
 	
 	return 0;
-	
 }

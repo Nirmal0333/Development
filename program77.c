@@ -5,10 +5,11 @@
 bool Search(int Arr[],int iLength,int iNo)
 {
 	int iCnt = 0;
-	bool bFlag = false;
-	for(iCnt = 0;iCnt<iLength;iCnt++)
+    bool bFlag = flase;
+	
+	for(iCnt =0;iCnt<iLength;iCnt++)
 	{
-		if(Arr[iCnt] == iNo)
+		if(Arr[iCnt]==iNo)
 		{
 			bFlag = true;
 			break;
@@ -16,39 +17,38 @@ bool Search(int Arr[],int iLength,int iNo)
 	}
 	return bFlag;
 }
-
 int main()
-{   
-    int iCnt = 0;
-	int iSize = 0;
-	bool bRet = 0;
+{
+	int iSize = 0,iCnt = 0,iValue = 0;
+	bool bRet;
 	int *ptr = NULL;
-	int iValue = 0;
-	printf("Enter the number of elements\n");
+	
+	
+	printf("Enter number of elements\n");
 	scanf("%d",&iSize);
 	
-	ptr = (int *)malloc(iSize * sizeof(int));
-    
+	ptr = (int *)malloc(sizeof(int) * iSize);
+	
 	printf("Enter the values\n");
-	for(iCnt = 0;iCnt<iSize;iCnt++)
+	for(iCnt=0;iCnt<iSize;iCnt++)
 	{
 		scanf("%d",&ptr[iCnt]);
 	}
 	
-	printf("Enter the element to search\n");
+	printf("Enter the elements to search\n");
 	scanf("%d",&iValue);
 	
-	bRet = Search(ptr,iSize,iValue);
+	bRet=Search(ptr,iSize,iValue);
 	if(bRet == true)
 	{
-		printf("Element is there in array\n");
+		printf("Element is there\n");
 	}
 	else
 	{
-		printf("Element is not there in array\n");
+		printf("Element is not there\n");
 	}
 
-	free(ptr);
+    free(ptr);	
 	
 	return 0;
 }

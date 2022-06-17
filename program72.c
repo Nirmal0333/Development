@@ -3,36 +3,35 @@
 
 int SummationNumber(int Arr[],int iLength)
 {
-	int iSum = 0, iCnt = 0;
-	for(iCnt = 0;iCnt<iLength;iCnt++)
+	int iCnt = 0, iNo=0,iSum = 0;
+	
+	for(iCnt =0;iCnt<iLength;iCnt++)
 	{
 		iSum = iSum + Arr[iCnt];
 	}
 	return iSum;
-	
 }
+
 int main()
-{   
-    int iCnt = 0;
-	int iSize = 0;
-	int iRet = 0;
-	int *ptr = NULL;
+{
+	int iValue = 0,iCnt = 0,iRet = 0;
+	int *ptr= NULL;
 	
-	printf("Enter the number of elements\n");
-	scanf("%d",&iSize);
+	printf("Enter the number\n");
+	scanf("%d",&iValue);
 	
-	ptr = (int *)malloc(iSize * sizeof(int));
-    
-	printf("Enter the values\n");
-	for(iCnt = 0;iCnt<iSize;iCnt++)
+	ptr = (int *)malloc(iValue*sizeof(int));
+	printf("Enter the elements of array: \n");
+	for(iCnt = 0;iCnt<iValue;iCnt++)
 	{
 		scanf("%d",&ptr[iCnt]);
 	}
 	
-	iRet = SummationNumber(ptr,iSize);
+	iRet = SummationNumber(ptr,iValue);
 	
-	printf("Summation is: %d\n",iRet);
+	printf("Summation is:%d\n",iRet);
 	free(ptr);
 	
 	return 0;
+	
 }

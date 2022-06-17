@@ -1,41 +1,36 @@
 #include<stdio.h>
 #include<stdlib.h>
-//postive
+
 int Maximum(int Arr[],int iLength)
 {
 	int iMax = 0,iCnt = 0;
+	
 	for(iCnt = 0;iCnt<iLength;iCnt++)
 	{
-		
 		if(iMax<Arr[iCnt])
 		{
 			iMax = Arr[iCnt];
 		}
 	}
 	return iMax;
-	
 }
 int main()
-{   
-    int iCnt = 0;
-	int iSize = 0;
-	int iRet = 0;
+{
+	int iValue = 0, iRet = 0, iCnt = 0;
 	int *ptr = NULL;
 	
-	printf("Enter the number of elements\n");
-	scanf("%d",&iSize);
+	printf("Enter the number\n");
+	scanf("%d",&iValue);
 	
-	ptr = (int *)malloc(iSize * sizeof(int));
-    
-	printf("Enter the values\n");
-	for(iCnt = 0;iCnt<iSize;iCnt++)
+	ptr = (int *)malloc(iValue *sizeof(int));
+	printf("Enter the elements of array:\n");
+	for(iCnt = 0;iCnt<iValue;iCnt++)
 	{
 		scanf("%d",&ptr[iCnt]);
 	}
 	
-	iRet = Maximum(ptr,iSize);
-	
-	printf("Maximum is:%d\n",iRet);
+	iRet = Maximum(ptr,iValue);
+	printf("Maximum number is:%d\n",iRet);
 	free(ptr);
 	
 	return 0;
