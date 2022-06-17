@@ -1,3 +1,5 @@
+// Template for probplems on Numbers
+
 import java.lang.*;
 import java.util.*;
 
@@ -16,38 +18,41 @@ class Number
     {
         System.out.println("Value is : "+this.iNo);
     }
-
-    public void DisNonFactors()
-    {
-            int iCnt = 0;
-            
-			if(iNo < 0)
-			{
-				iNo = -iNo;
-			}
-			
-            for(iCnt = 1; iCnt < iNo; iCnt++)
-            {
-                if((iNo % iCnt) != 0)
-				{
-					System.out.println(iCnt);
-				}					
-            }
-            
-    }
+    
+	public int SumEven()
+	{
+     int iDigit = 0;
+	 int iSum = 0;
+	
+	 if(iNo < 0)
+	 {
+		iNo = -iNo;
+	 }
+	 while(iNo > 0)
+	 {
+		iDigit = iNo % 10;
+		if((iDigit % 2) == 0)
+		{
+			iSum = iSum + iDigit;
+		}
+		iNo = iNo/10;
+	 }
+	 return iSum;
+	}
 }
 
-class PN12
+class PN24
 {
     public static void main(String b[])
     {
             Number nobj = new Number();
-            
-
+            int iRet = 0;
+			
             nobj.Accept();
             nobj.Display();
 
-            nobj.DisNonFactors();
-            
+            iRet = nobj.SumEven();
+			
+			System.out.println("The sum of even digits is : "+iRet);
     }
 }

@@ -1,5 +1,3 @@
-//DisplayNonFactors
-
 import java.lang.*;
 import java.util.*;
 
@@ -16,36 +14,30 @@ class Number
 	
 	public void Display()
 	{
-		System.out.println("Value is: "+this.iNo);
-	}
-	public void DisplayNonFactors()
-	{
 		int iCnt = 0;
 		
 		if(iNo < 0)
 		{
-			iNo = -iNo;
+			System.out.println("Plese enter positive number");
+			return;
 		}
 		
-		for(iCnt = 1;iCnt < iNo; iCnt++)
+		for(iCnt = 0; iCnt<iNo;iCnt++)
 		{
-			if((iNo%iCnt) != 0)
-			{
-				System.out.println(iCnt);
-			}
+			System.out.println("Hello");
 		}
 	}
 }
-class PN3
+
+class PN24
 {
-	public static void main(String b[])
+	public static void main(String a[])
 	{
 		Number nobj = new Number();
 		
 		nobj.Accept();
 		nobj.Display();
 		
-		
-		nobj.DisplayNonFactors();
+	
 	}
 }

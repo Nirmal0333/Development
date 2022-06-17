@@ -1,4 +1,4 @@
-//DisplayBackward
+//updator
 
 import java.lang.*;
 import java.util.*;
@@ -9,32 +9,38 @@ class Number
 	
 	public void Accept()
 	{
-		
-	  Scanner sobj = new Scanner (System.in);
-	  System.out.println("Enter number : ");
-	  this.iNo = sobj.nextInt();
+		Scanner sobj = new Scanner(System.in);
+		System.out.println("Enter number : ");
+		this.iNo = sobj.nextInt();
 	}
 	
-	public void DisplayBackward()
+	public void Display()
 	{
-		int iCnt = 0;
+		int iCnt = 1;
 		
-		for(iCnt = iNo;iCnt >=1;iCnt--)
+		if(iNo < 0)
 		{
-			System.out.println(iCnt);
+			iNo = -iNo;
 		}
+		
+		while(iCnt <= iNo)
+		{
+			System.out.println(+iCnt);
+			iCnt++;
+		}
+		
 	}
 }
 
-
 class PN6
 {
-	public static void main(String y[])
+	public static void main(String a[])
 	{
 		Number nobj = new Number();
 		
 		nobj.Accept();
+		nobj.Display();
 		
-		nobj.DisplayBackward();
+	
 	}
 }

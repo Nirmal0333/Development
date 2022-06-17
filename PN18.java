@@ -17,37 +17,33 @@ class Number
         System.out.println("Value is : "+this.iNo);
     }
 
-    public void DisNonFactors()
+    public int CntFactor()
     {
+            int iFactCnt = 1;
             int iCnt = 0;
-            
-			if(iNo < 0)
-			{
-				iNo = -iNo;
-			}
-			
-            for(iCnt = 1; iCnt < iNo; iCnt++)
+
+            for(iCnt = 1; iCnt <= (iNo/2); iCnt++)
             {
-                if((iNo % iCnt) != 0)
+                if(iNo % iCnt == 0)
 				{
-					System.out.println(iCnt);
-				}					
+					iFactCnt++;
+				}
             }
-            
+            return iFactCnt;
     }
 }
 
-class PN12
+class PN18
 {
     public static void main(String b[])
     {
             Number nobj = new Number();
-            
+            int iRet = 0;
 
             nobj.Accept();
             nobj.Display();
 
-            nobj.DisNonFactors();
-            
+            iRet =nobj.CntFactor();
+            System.out.println("Factors of number are : "+iRet);
     }
 }

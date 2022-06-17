@@ -17,37 +17,42 @@ class Number
         System.out.println("Value is : "+this.iNo);
     }
 
-    public void DisNonFactors()
+    public int SumDigits()
     {
-            int iCnt = 0;
-            
-			if(iNo < 0)
-			{
-				iNo = -iNo;
-			}
-			
-            for(iCnt = 1; iCnt < iNo; iCnt++)
-            {
-                if((iNo % iCnt) != 0)
-				{
-					System.out.println(iCnt);
-				}					
-            }
-            
-    }
+		
+
+        int iDigit = 0;
+        int iSum = 0;
+        if(iNo < 0)
+        {
+           iNo = -iNo;
+        }
+        while(iNo > 0)
+        {
+           iDigit = iNo % 10;
+		   if((iNo %2) != 0)
+		   {
+              iSum = iSum + iDigit;
+		   }  
+           iNo = iNo /10;
+        }
+        return iSum;
+	}	
 }
 
-class PN12
+class PN40
 {
     public static void main(String b[])
     {
             Number nobj = new Number();
-            
+            int iRet = 0;
 
             nobj.Accept();
             nobj.Display();
 
-            nobj.DisNonFactors();
+            iRet = nobj.SumDigits();
+			System.out.println("Value is: "+iRet);
+			
             
     }
 }

@@ -17,37 +17,34 @@ class Number
         System.out.println("Value is : "+this.iNo);
     }
 
-    public void DisNonFactors()
+    public void DisplayDigit()
     {
-            int iCnt = 0;
-            
-			if(iNo < 0)
-			{
-				iNo = -iNo;
-			}
-			
-            for(iCnt = 1; iCnt < iNo; iCnt++)
-            {
-                if((iNo % iCnt) != 0)
-				{
-					System.out.println(iCnt);
-				}					
-            }
-            
+        int iDigit = 0;
+        int iRev = 0;
+
+    while(iNo > 0)
+    {
+        iDigit = iNo % 10;
+        iRev = iRev * 10 + iDigit;
+        iNo = iNo / 10;
     }
+
+    System.out.println("Elements is: "+iRev);
+	}
 }
 
-class PN12
+class PN38
 {
     public static void main(String b[])
     {
             Number nobj = new Number();
-            
+            int iRet = 0;
 
             nobj.Accept();
             nobj.Display();
 
-            nobj.DisNonFactors();
+            nobj.DisplayDigit();
+			
             
     }
 }

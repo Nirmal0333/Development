@@ -15,11 +15,22 @@ class Number
 		this.iNo = sobj.nextInt();
 	}
 	
-	public boolean ChkEven()
+	public boolean ChkPallindrome()
 	{
+		int iDigit = 0;
+		int iRev = 0;
+		int iTemp = 0;
 		
+		iTemp = iNo;
 		
-		if((iNo %2) == 0)
+		while(iNo > 0)
+		{
+			iDigit = iNo % 10;
+			iRev = iRev * 10 + iDigit;
+			iNo = iNo / 10;
+		}
+		
+		if(iRev == iTemp)
 		{
 			return true;
 		}
@@ -27,34 +38,28 @@ class Number
 		{
 			return false;
 		}
-		
-		
-		
 	}
 }
 
-class PN8
+class PN26
 {
-	boolean iRet = false;
-
 	public static void main(String a[])
 	{
-		boolean A = true;
-		boolean B = false;
-		
-		
 		Number nobj = new Number();
+		boolean iRet;
+		
 		
 		nobj.Accept();
-		nobj.ChkEven();
+		iRet = nobj.ChkPallindrome();
 		
-		if(A == true)
+		if(iRet == true)
 		{
-			System.out.println("The number is even");
+			System.out.println("The number is Pallindrome");
 		}
 		else
 		{
-			System.out.println("The number is not even");
+			System.out.println("The number is not Pallindrome");
 		}
+
 	}
 }

@@ -1,48 +1,50 @@
-//power
+// Template for probplems on Numbers
 
 import java.lang.*;
 import java.util.*;
 
 class Number
 {
-	private int iNo;
-	
-	public void Accept()
+    private int iNo;
+
+    public void Accept()
+    {
+        Scanner sobj = new Scanner(System.in);
+        System.out.println("Enter number : ");
+        this.iNo = sobj.nextInt();
+    }
+
+    public void DisplayF()
 	{
-		Scanner sobj = new Scanner(System.in);
-		System.out.println("Enter number : ");
-		this.iNo = sobj.nextInt();
-		
-	}
-	
-	public void Display()
+		int iCnt = 0;
+     for(iCnt = 1;iCnt<= iNo;iCnt++)
+	 {
+		System.out.println(+iCnt);
+	 }
+	} 
+    
+	public void DisplayB()
 	{
-		System.out.println("Value is : "+this.iNo);
-	}
-	
-	public void Power()
-	{
-		int Mult = 0;
 		int iCnt = 0;
 		
-		for(iCnt = 1; iCnt<=iNo;iCnt++)
+		for(iCnt = iNo; iCnt >= 1; iCnt--)
 		{
-			Mult = Mult * iNo;
+			System.out.println(+iCnt);
 		}
-		System.out.println(Mult);
 	}
-	
+       
 }
 
 class PN16
 {
-	public static void main(String v[])
-	{
-		Number nobj = new Number();
-		
-		nobj.Accept();
-		nobj.Display();
-		
-		nobj.Power();
-	}
+    public static void main(String b[])
+    {
+            Number nobj = new Number();
+
+            nobj.Accept();
+            
+
+            nobj.DisplayF();
+            nobj.DisplayB();
+    }
 }

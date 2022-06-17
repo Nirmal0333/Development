@@ -1,5 +1,3 @@
-//Maximum
-
 // Template for probplems on N Numbers
 
 import java.lang.*;
@@ -37,25 +35,20 @@ class ArrayX
             System.out.println(Arr[iCnt]);
         }
     }
-	
-	public void Maximum()
+
+    public int Maximum()
 	{
+		int iMax = 0, iCnt = 0;
 		
-    int iMax = 0, iCnt = 0;
-
-    for(iCnt = 0; iCnt < Arr.length; iCnt++)
-    {
-        if(iMax < Arr[iCnt])
-        {
-            iMax = Arr[iCnt];
-			
-        }
-    }
-    return iMax;
-	
+		for(iCnt = 0; iCnt < Arr.length; iCnt++)
+		{
+			if(iMax < Arr[iCnt])
+			{
+				iMax = Arr[iCnt];
+			}
+		}
+		return iMax;
 	}
-
-    
 }
 
 class PA4
@@ -73,7 +66,9 @@ class PA4
             obj.Accept();
             obj.Display();
 
-            system.out.println(obj.Maximum());
+            iRet = obj.Maximum();
+			
+			System.out.println("The Maximum number is : "+iRet);
 
             obj = null;
     }

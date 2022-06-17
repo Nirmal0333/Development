@@ -1,3 +1,5 @@
+// Template for probplems on Numbers
+
 import java.lang.*;
 import java.util.*;
 
@@ -16,38 +18,29 @@ class Number
     {
         System.out.println("Value is : "+this.iNo);
     }
+	
+	public void Display1()
+	{
+		int iCnt = 0;
+		
+		for(iCnt = 1; iCnt <= iNo; iCnt++)
+		{
+		  System.out.print(iCnt + "\t");
+		}
+	}
 
-    public void DisNonFactors()
-    {
-            int iCnt = 0;
-            
-			if(iNo < 0)
-			{
-				iNo = -iNo;
-			}
-			
-            for(iCnt = 1; iCnt < iNo; iCnt++)
-            {
-                if((iNo % iCnt) != 0)
-				{
-					System.out.println(iCnt);
-				}					
-            }
-            
-    }
+      
 }
 
-class PN12
+class PP1
 {
     public static void main(String b[])
     {
             Number nobj = new Number();
-            
 
             nobj.Accept();
             nobj.Display();
 
-            nobj.DisNonFactors();
-            
+            nobj.Display1();
     }
 }

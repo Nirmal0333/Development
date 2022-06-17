@@ -1,4 +1,4 @@
-//Display backward and forward
+//updator
 
 import java.lang.*;
 import java.util.*;
@@ -9,50 +9,42 @@ class Number
 	
 	public void Accept()
 	{
-		Scanner sobj = new Scanner (System.in);
+		Scanner sobj = new Scanner(System.in);
 		System.out.println("Enter number : ");
 		this.iNo = sobj.nextInt();
+	}
+	
+	public void Summation()
+	{
+		int iCnt = 0, iSum = 0;
 		
-	}
-	
-	public void Display()
-	{
-		System.out.println("Value is: "+this.iNo);
-	}
-	
-	public void DisplayForward()
-	{
-		int iCnt = 0;
+		if(iNo < 0)
+		{
+			iNo = -iNo;
+		}
 		
 		for(iCnt = 1; iCnt<=iNo;iCnt++)
 		{
-			System.out.println(iCnt);
+			iSum = iSum + iCnt;
+			
 		}
-	
-	}
-	
-	public void DisplayBackward()
-	{
-		int iCnt = 0;
+		System.out.println(+iSum);
 		
-		for(iCnt = iNo;iCnt >=1;iCnt--)
-		{
-			System.out.println(iCnt);
-		}
 	}
-	
 }
 
 class PN7
 {
-	public static void main(String b[])
+	int iRet = 0;
+
+	public static void main(String a[])
 	{
 		Number nobj = new Number();
 		
 		nobj.Accept();
-		nobj.Display();
+		nobj.Summation();
 		
-		nobj.DisplayForward();
-		nobj.DisplayBackward();
+		
+	
 	}
 }

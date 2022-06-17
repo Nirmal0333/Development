@@ -1,4 +1,4 @@
-//SumEven
+//updator
 
 import java.lang.*;
 import java.util.*;
@@ -7,33 +7,35 @@ class Number
 {
 	private int iNo;
 	
+	
 	public void Accept()
 	{
 		Scanner sobj = new Scanner(System.in);
-		System.out.println("Eneter number: ");
+		System.out.println("Enter number : ");
 		this.iNo = sobj.nextInt();
 	}
 	
-	public void Display()
-	{
-		System.out.println("Value is : "+this.iNo);
-	}
 	
-	public void SumEven()
+	public int ChkPerfect()
 	{
-		int iDigit = 0;
-		int iSum = 0;
+		int iCnt = 0, iSum = 0;
 		
-		while(iNo> 0)
+		for(iCnt =1; iCnt <=(iNo/2);iCnt++)
 		{
-			iDigit = iNo % 10;
-			if((iDigit % 2 ) == 0)
+			if((iNo % iCnt) == 0)
 			{
-				iSum = iSum + iDigit;
+				iSum = iSum + iCnt;
 			}
-			iNo = iNo/10;
 		}
-		System.out.println(iSum);
+		
+		if(iSum == iNo)
+		{
+			return 1;
+		}
+		else
+		{
+			return 0;
+		}
 	}
 }
 
@@ -42,10 +44,19 @@ class PN14
 	public static void main(String a[])
 	{
 		Number nobj = new Number();
+		int iRet = 0;
 		
 		nobj.Accept();
-		nobj.Display();
+		iRet = nobj.ChkPerfect();
 		
-		nobj.SumEven();
+		if(iRet == 1)
+		{
+			System.out.println("The number is perfect");
+		}
+		else
+		{
+			System.out.println("The number is not perfect");
+		}
+
 	}
 }

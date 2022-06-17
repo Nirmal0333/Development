@@ -36,10 +36,21 @@ class ArrayX
         }
     }
 
-    
+    public void Display1()
+	{
+		int iCnt = 0;
+		
+		for(iCnt = 0;iCnt <= Arr.length;iCnt++)
+		{
+			if((Arr[iCnt] % 5) == 0)
+			{
+				System.out.println(Arr[iCnt]);
+			}
+		}
+	}
 }
 
-class PA
+class PN41
 {
     public static void main(String arg[])
     {
@@ -54,7 +65,7 @@ class PA
             obj.Accept();
             obj.Display();
 
-            
+            obj.Display1();
 
             obj = null;
     }

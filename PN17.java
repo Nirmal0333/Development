@@ -7,6 +7,7 @@ class Number
 {
 	private int iNo;
 	
+	
 	public void Accept()
 	{
 		Scanner sobj = new Scanner(System.in);
@@ -14,33 +15,42 @@ class Number
 		this.iNo = sobj.nextInt();
 	}
 	
-	public void Display()
+	public boolean ChkEven()
 	{
 		int iCnt = 0;
+		boolean bFlag = true;
 		
-		if(iNo < 0)
+		for(iCnt = 2; iCnt<= (iNo/2); iCnt++)
 		{
-			iNo = -iNo;
+			if(iNo % iCnt == 0)
+			{
+				bFlag = false;
+				break;
+			}
 		}
-		
-		for(iCnt = 1; iCnt<=iNo;iCnt++)
-		{
-			System.out.println(+iCnt);
-			
-		}
-		
+		return bFlag;
 	}
 }
 
-class PN5
+class PN17
 {
 	public static void main(String a[])
 	{
 		Number nobj = new Number();
+		boolean iRet;
+		
 		
 		nobj.Accept();
-		nobj.Display();
+		iRet = nobj.ChkEven();
 		
-	
+		if(iRet == true)
+		{
+			System.out.println("The number is Prime");
+		}
+		else
+		{
+			System.out.println("The number is not Prime");
+		}
+
 	}
 }

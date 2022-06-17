@@ -1,3 +1,5 @@
+// Template for probplems on Numbers
+
 import java.lang.*;
 import java.util.*;
 
@@ -16,38 +18,39 @@ class Number
     {
         System.out.println("Value is : "+this.iNo);
     }
+    
+	public int Reverse()
+	{
+     int iDigit = 0;
+	 int iRev = 0;
+	
+	 if(iNo < 0)
+	 {
+		iNo = -iNo;
+	 }
+	 while(iNo > 0)
+	 {
+		iDigit = iNo % 10;
+		iRev = iRev * 10 + iDigit;
 
-    public void DisNonFactors()
-    {
-            int iCnt = 0;
-            
-			if(iNo < 0)
-			{
-				iNo = -iNo;
-			}
-			
-            for(iCnt = 1; iCnt < iNo; iCnt++)
-            {
-                if((iNo % iCnt) != 0)
-				{
-					System.out.println(iCnt);
-				}					
-            }
-            
-    }
+		iNo = iNo/10;
+	 }
+	 return iRev;
+	}
 }
 
-class PN12
+class PN25
 {
     public static void main(String b[])
     {
             Number nobj = new Number();
-            
-
+            int iRet = 0;
+			
             nobj.Accept();
             nobj.Display();
 
-            nobj.DisNonFactors();
-            
+            iRet = nobj.Reverse();
+			
+			System.out.println("Reverse number is : "+iRet);
     }
 }

@@ -1,4 +1,4 @@
-//DisplayDigits
+//updator
 
 import java.lang.*;
 import java.util.*;
@@ -7,6 +7,7 @@ class Number
 {
 	private int iNo;
 	
+	
 	public void Accept()
 	{
 		Scanner sobj = new Scanner(System.in);
@@ -14,39 +15,37 @@ class Number
 		this.iNo = sobj.nextInt();
 	}
 	
-	public void Display()
+	public int ChkEven()
 	{
-		System.out.println("Value is : "+this.iNo);
-	}
-	
-	public void DisplayDigits()
-	{
-		int iDigit = 0;
-		
-		if(iNo < 0)
+		if((iNo %2) == 0)
 		{
-			iNo = -iNo;
+			return 1;
 		}
-		while(iNo != 0)
+		else
 		{
-			iDigit = iNo % 10;
-			System.out.println(iDigit);
-			iNo = iNo/10;
+			return 0;
 		}
 	}
 }
+
 class PN9
 {
-	public static void main(String o[])
+	public static void main(String a[])
 	{
 		Number nobj = new Number();
+		int iRet = 0;
 		
 		nobj.Accept();
-		nobj.Display();
+		iRet = nobj.ChkEven();
 		
-		nobj.DisplayDigits();
-	 	
+		if(iRet == 1)
+		{
+			System.out.println("The number is even");
+		}
+		else
+		{
+			System.out.println("The number is not even");
+		}
+
 	}
-	
-	
 }

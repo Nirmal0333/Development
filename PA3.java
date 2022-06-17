@@ -36,10 +36,19 @@ class ArrayX
         }
     }
 
-    
+    public int SummationNumber()
+	{
+		int iSum = 0, iCnt = 0;
+		
+		for(iCnt = 0; iCnt < Arr.length; iCnt++)
+		{
+			iSum = iSum + Arr[iCnt];
+		}
+		return iSum;
+	}
 }
 
-class PN17
+class PA3
 {
     public static void main(String arg[])
     {
@@ -54,7 +63,9 @@ class PN17
             obj.Accept();
             obj.Display();
 
-          
+            iRet = obj.SummationNumber();
+			
+			System.out.println("The Summation of number is : "+iRet);
 
             obj = null;
     }

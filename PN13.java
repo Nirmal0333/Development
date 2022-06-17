@@ -1,44 +1,46 @@
-//DisplayEven
-
 import java.lang.*;
 import java.util.*;
 
 class Number
 {
-	private int iNo;
-	
-	public void Accept()
-	{
-		Scanner sobj = new Scanner(System.in);
-		System.out.println("Enter number: ");
-		this.iNo = sobj.nextInt();
-	}
-	
-	public void Display()
-	{
-		System.out.println("Valu is : "+this.iNo);
-	}
-	
-	public void DisplayEven()
-	{
-		int iDigit = 0;
-		
-		iDigit = iNo % 10;
-		if((iDigit % 2) == 0)
-		{
-			System.out.println(iDigit);
-		}
-	}
+    private int iNo;
+
+    public void Accept()
+    {
+        Scanner sobj = new Scanner(System.in);
+        System.out.println("Enter number : ");
+        this.iNo = sobj.nextInt();
+    }
+
+   
+
+    public int SumFactors()
+    {
+            int iSum = 0;
+            int iCnt = 0;
+
+            for(iCnt = 1; iCnt <= (iNo/2); iCnt++)
+            {
+                if((iNo % iCnt) == 0)
+				{
+					iSum = iSum + iCnt;
+				}
+            }
+            return iSum;
+    }
 }
+
 class PN13
 {
-	public static void main(String b[])
-	{
-		Number nobj = new Number();
-		
-		nobj.Accept();
-		nobj.Display();
-		
-		nobj.DisplayEven();
-	}
+    public static void main(String b[])
+    {
+            Number nobj = new Number();
+            int iRet = 0;
+
+            nobj.Accept();
+          
+
+            iRet =nobj.SumFactors();
+            System.out.println("Sum of factor is : "+iRet);
+    }
 }

@@ -17,37 +17,43 @@ class Number
         System.out.println("Value is : "+this.iNo);
     }
 
-    public void DisNonFactors()
+    public boolean Check()
     {
-            int iCnt = 0;
-            
-			if(iNo < 0)
-			{
-				iNo = -iNo;
-			}
+        if((iNo % 2) == 0)
+		{
+			return true;
+		}
+		else
+		{
+		    return false;
+		}
 			
-            for(iCnt = 1; iCnt < iNo; iCnt++)
-            {
-                if((iNo % iCnt) != 0)
-				{
-					System.out.println(iCnt);
-				}					
-            }
-            
+			
+           
     }
 }
 
-class PN12
+class PN30
 {
     public static void main(String b[])
     {
             Number nobj = new Number();
-            
+            boolean iRet;
 
             nobj.Accept();
             nobj.Display();
 
-            nobj.DisNonFactors();
+            iRet = nobj.Check();
+			
+			if(iRet == true)
+			{
+				System.out.println("The number is even");
+			}
+			else 
+			{
+				System.out.println("The number is not even");
+			}
             
     }
 }
+			

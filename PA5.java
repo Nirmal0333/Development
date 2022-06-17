@@ -36,10 +36,22 @@ class ArrayX
         }
     }
 
-    
+    public int Minimum()
+	{
+		int iMin = Arr[0], iCnt = 0;
+		
+		for(iCnt = 0; iCnt < Arr.length; iCnt++)
+		{
+			if(iMin > Arr[iCnt])
+			{
+				iMin = Arr[iCnt];
+			}
+		}
+		return iMin;
+	}
 }
 
-class PA
+class PA5
 {
     public static void main(String arg[])
     {
@@ -54,7 +66,9 @@ class PA
             obj.Accept();
             obj.Display();
 
-            
+            iRet = obj.Minimum();
+			
+			System.out.println("The Minimumm number is : "+iRet);
 
             obj = null;
     }

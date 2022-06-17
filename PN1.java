@@ -1,43 +1,44 @@
-//Display numbers  
 import java.lang.*;
 import java.util.*;
 
-class ArrayX
+class Number
 {
-	private int Arr[];
+	private int iNo1;
+	private int iNo2;
+	private int iNo3;
 	
-	
-	public ArrayX(int iNo)
+	public void Accept();
 	{
-		Arr = new int[iNo];
+		Scanner sobj = new Scanner(System.in);
+		System.out.println("Enter first number: ");
+		System.out.println("Enter Second number: ");
+		this.iNo = sobj.nextInt();
 	}
 	
-	public void Display()
+	public int Display()
 	{
-		int iCnt = 0;
-	
-	 for(iCnt = 1;iCnt <= iNo; iCnt++)
-	 {
-		System.out.println(iCnt);
-	 }
+		int iNo1=0,iNo2 = 0,iNo3 = 0;
+		
+	    iNo3 = iNo1 + iNo2;
 	}
+	return iNo3;
 }
 
 class PN1
 {
-	public static void main(String arg[])
+	int iRet = 0;
+	
+	public static void main(String p[])
 	{
-		Scanner sobj = new Scanner(System.in);
-		int iValue = 0;
+		Number nobj = new Number();
 		
-		System.out.println("Enter the value");
+		nobj.Accept = new Number();
+		nobj.Accept = new Number();
 		
-		iValue = new sobj.nextInt();
+		nobj.Accept();
+		nobj.Accept();
+		iRet = nobj.Addition();
 		
-		Display obj = new Display(iValue);
-		
-		onj.Display();
+		System.out.println("Addition is: "+iRet);
 	}
-	
-	
 }
