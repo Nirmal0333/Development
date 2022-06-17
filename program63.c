@@ -1,26 +1,20 @@
-//Array with loop
-//Array 
-
 #include<stdio.h>
-
 int main()
 {
-	int Arr[5];
-	register int iCnt = 0;
+	int arr[5];
+	int iCnt = 0;
 	
-	printf("Enter elements:\n");
-	
-    for(iCnt=0;iCnt<5;iCnt++)
+	printf("Enter the numbers :\n");
+	for(iCnt=0;iCnt<5;iCnt++)
 	{
-		scanf("%d",&Arr[iCnt]);
-		
+	scanf("%d",&arr[iCnt]);
 	}
 	
-	printf("Elements of array are:\n");
+	printf("The numbers are:\n");
 	
-	for(iCnt = 0;iCnt<5;iCnt++)
+	for(iCnt=0;iCnt<5;iCnt++)
 	{
-		printf("%d\n",Arr[iCnt]);
+		printf("%d\n",arr[iCnt]);
 	}
 	
 	return 0;

@@ -1,30 +1,30 @@
-//Array with loop
-//Array 
-
 #include<stdio.h>
- 
-void Display(int Arr[])
+void Display(int arr[])
 {
 	int iCnt = 0;
-	printf("Elements of array are:\n");
 	
-	for(iCnt = 0;iCnt<5;iCnt++)
+	printf("The numbers are:\n");
+	
+	for(iCnt=0;iCnt<5;iCnt++)
 	{
-		printf("%d\n",Arr[iCnt]);
+		printf("%d\n",arr[iCnt]);
+		
 	}
+	
 }
+
 int main()
 {
-	int Brr[5];
-	register int iCnt = 0;
+	int brr[5];
+	int iCnt = 0;
 	
-	printf("Enter elements:\n");
-	
-    for(iCnt=0;iCnt<5;iCnt++)
+	printf("Enter the numbers :\n");
+	for(iCnt=0;iCnt<5;iCnt++)
 	{
-		scanf("%d",&Brr[iCnt]);
+	scanf("%d",&brr[iCnt]);
 	}
-	Display(Brr);   //Display(100); name of array is //internally considered as its base address
+	
+	Display(brr);
 	
 	return 0;
 }

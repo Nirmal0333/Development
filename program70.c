@@ -1,38 +1,38 @@
-//accept n numbers and display only even numbers
 #include<stdio.h>
 #include<stdlib.h>
 
-
-void DisplayEven(int Arr[],int iLength)
+void DisplayEven(int arr[],int iLength)
 {
-    int iCnt = 0;
-	printf("Even numbers are\n");
-	for(iCnt = 0;iCnt<iLength;iCnt++)
+	int iCnt = 0;
+	
+	printf("The numbers are:\n");
+	
+	for(iCnt=0;iCnt<iLength;iCnt++)
 	{
-		if((Arr[iCnt]%2)==0)
+		if((arr[iCnt] % 2) == 0)
 		{
-			
-			printf("%d\n",Arr[iCnt]);
+		printf("%d\n",arr[iCnt]);
 		}
 	}
 }
 int main()
 {
-	int iSize = 0, iCnt = 0;
+	int iSize = 0;
+	int iCnt = 0;
 	int *ptr = NULL;
 	
-	printf("Enter number of elements:\n");
+	printf("Enter the number of elements\n");
 	scanf("%d",&iSize);
 	
-	ptr = (int*)malloc(iSize*sizeof(int));
+	ptr = (int *)malloc(iSize * sizeof(int));
 	
-	printf("Enter the values of array:\n");
-	for(iCnt = 0;iCnt<iSize;iCnt++)
+	printf("Enter the elements: \n");
+	for(iCnt=0;iCnt<iSize;iCnt++)
 	{
-		scanf("%d",&ptr[iCnt]);
+	scanf("%d",&ptr[iCnt]);
 	}
 	
-	DisplayEven(ptr,iSize);
+	DisplayEven(ptr, iSize);
 	free(ptr);
 	
 	return 0;
