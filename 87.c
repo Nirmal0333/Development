@@ -1,39 +1,37 @@
-#include<stdio.h>
+// Input :  Row 4   Columns     4
+/*
+    *   *   *   *
+    *   *   *   *
+    *   *   *   *
+    *   *   *   *
+*/
 
-void Pattern(int iRow,int iCol)
+#include<stdio.h>
+void Display(int iNo1,int iNo2)
 {
 	int i = 0, j = 0;
 	
-	for(i=1;i<=iRow;i++)
+	for(i = 1;i <=iNo1;i++)
 	{
-		for(j=iCol;j>=1;j--)
+		for(j = 1;j<=iNo2;j++)
 		{
-			if(i==j)
-			{
-				printf("#\t");
-				
-			}
-			else if(i<=j)
-			{
-				printf("*\t");
-			}
-			else if(i>=j)
-			{
-				printf("@\t");
-			}
+			printf("*\t");
 		}
 		printf("\n");
 	}
-	
 }
+
 int main()
 {
-	int iValue1= 0,iValue2 = 0;
+	int iValue1 = 0,iValue2 = 0;
 	
-	printf("Enter the number\n");
-	scanf("%d %d",&iValue1,&iValue2);
+	printf("Enter first element\n");
+	scanf("%d",&iValue1);
 	
-	Pattern(iValue1,iValue2);
+	printf("Enter first element\n");
+	scanf("%d",&iValue2);
+	
+	Display(iValue1,iValue2);
 	
 	return 0;
 	

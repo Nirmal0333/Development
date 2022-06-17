@@ -1,36 +1,30 @@
+// Input :  4
+// Output : 4   3   2   1  1   2   3   4
+// O(2N)
 #include<stdio.h>
-
-void Pattern(int iRow,int iCol)
+void Display(int i)
 {
-	int i = 0, j = 0;
+ 	int iCnt = 0;
 	
-	for(i=1;i<=iRow;i++)
+	for(iCnt=1;iCnt<=i;iCnt++)
 	{
-		for(j=1;j<=iCol;j++)
-		{
-			if(i<=j)
-			{
-				printf("%d\t",j);
-				
-			}
-			else
-			{
-				printf("\t");
-			}
-		}
-		printf("\n");
+		printf("%d\t",iCnt);
 	}
-	
+	for(iCnt=i;iCnt>=1;iCnt--)
+	{
+		printf("%d\t",iCnt);
+	}
 }
 int main()
 {
-	int iValue1= 0,iValue2 = 0;
+	int iValue1 = 0;
+
+    printf("Enter first elements\n");
+	scanf("%d",&iValue1);
 	
-	printf("Enter the number\n");
-	scanf("%d %d",&iValue1,&iValue2);
 	
-	Pattern(iValue1,iValue2);
+	
+	Display(iValue1);
 	
 	return 0;
-	
 }
