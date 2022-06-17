@@ -1,42 +1,17 @@
 #include<stdio.h>
-#include<stdbool.h>
 
-typedef int BOOL;
-#define TRUE 1
-#define FALSE 0
-
-char ChkVowel(char ch)
+void Accept(int iNo)
 {
-	if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u')
-	{
-		return TRUE;
-	}
-	else
-	{
-		return FALSE;
-	}
-		
+	int iCnt = 0;
+	
+	for(iCnt = 1; iCnt<=5;iCnt++)
+		printf("*");
 }
-
 int main()
 {
-	char cValue = '\0';
-	BOOL bRet = FALSE;
-	
-	printf("Enter character\n");
-	
-	scanf("%c",&cValue);
-	
-	bRet = ChkVowel(cValue);
-	
-	if(bRet == 1)
-	{
-		printf("It is Vowel");
-	}
-	else
-	{
-		printf("It is not Vowel");
-	}
-	
-	return 0;
+   int iValue = 0;
+   iValue = 5;
+   
+   Accept(iValue);
+   return 0;
 }

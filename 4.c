@@ -1,24 +1,22 @@
+//Program to print 5 to 1 number on screen
+
 #include<stdio.h>
 
-char DisplayConvert(char cValue)
+int Display()
 {
-	if(a==A)
+	int i = 0;
+	
+	
+	for(i =5; i>=0; i++);
 	{
-		printf("%c",a);
-	}
-	esle if(D==d)
-	{
-		printf("%d",A);
+		printf("%d",i);
+		
 	}
 }
+
 int main()
 {
-	char cValue = '\0';
-	
-	printf("Enter character\n");
-	scanf("%c",&cValue);
-	
-	DisplayConvert(cValue);
+	Display();
 	
 	return 0;
 }

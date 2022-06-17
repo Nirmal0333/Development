@@ -1,27 +1,23 @@
 #include<stdio.h>
 
-void FactRev(int iNo)
+void Display(int iNo)
 {
 	int iCnt = 0;
 	
-	for(iCnt = iNo/2; iCnt>=0;iCnt--)
+	while(iNo> iCnt)
 	{
-		if((iNo%iCnt)==0)
-		{
-			printf("%d\n",iCnt);
-		}
+		printf("*");
+		iNo--;
 	}
-	
 }
-
 int main()
 {
 	int iValue = 0;
 	
-	printf("Enter number:\n");
+	printf("Enter number");
 	scanf("%d",&iValue);
 	
-	FactRev(iValue);
+	Display(iValue);
 	
 	return 0;
 }

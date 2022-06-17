@@ -1,27 +1,24 @@
 #include<stdio.h>
 
-void DisplayNonFactor(int iNo)
+void Display(int iNo)
 {
-	int iCnt = 0;
-	
-	for(iCnt = 1; iCnt<iNo;iCnt++)
+	if
 	{
-		if((iNo%iCnt)!=0)
-		{
-			printf("%d\n",iCnt);
-		}
+		printf("Hello");
 	}
-	
+	else
+	{
+		printf("Demo");
+	}
 }
-
 int main()
 {
 	int iValue = 0;
 	
-	printf("Enter number:\n");
+	printf("Enter the number");
 	scanf("%d",&iValue);
 	
-	DisplayNonFactor(iValue);
+	Display(iValue);
 	
 	return 0;
 }

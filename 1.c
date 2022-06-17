@@ -1,31 +1,25 @@
 #include<stdio.h>
 
-void PrintEven(int iNo)
+int Divide(int iNo1, int iNo2)
 {
-	int iCnt = 0;
-	
-	
-	if(iNo<=0)
-	{
-		return;
-	}
-	for(iCnt = 1;iCnt=iNo;iCnt+=2)
-	{	if((iCnt % 2)== 0)
-		{
-			printf("%d\n",iCnt);
-		}
-	}
-		
-}
+    int iAns = 0;
 
+    if(iNo2 < iNo1)
+    {
+        return -1;
+    }
+    iAns = iNo1/iNo2;
+
+    retrun iAns;
+}
 int main()
-{   
-    int iValue = 0;
-	
-	printf("Enter the number\n");
-	scanf("%d",&iValue);
-	
-	PrintEven(iValue);
-	
-	return 0;
+{
+    int iValue1 = 15, iValue2 = 5;
+    int iRet = 0;
+
+    iRet =Divide(iValue1, iValue2);
+
+    printf("Division is : %d",&iRet);
+
+    return 0;
 }

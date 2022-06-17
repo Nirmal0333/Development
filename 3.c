@@ -1,30 +1,37 @@
 #include<stdio.h>
 
-void DisplayEvenFactor(int iNo)
+typedef int BOOL;
+#define True 1
+#define False 2
+
+int Check(int iNo)
 {
-	int i = 0;
-	
-	if(iNo<=0)
+	if((iNo%5)==0)
 	{
-		iNo = -iNo;
+		return True;
 	}
-    for(i =1;i<=(iNo/2);i++)
+	else
 	{
-		if(((i%2)==0) &&((iNo%i)==0))
-		{
-			printf("%d\n",i);
-		}
+		return False;
 	}
 }
 int main()
 {
 	int iValue = 0;
+	BOOL bRet = False;
 	
-	printf("Enter number\n");
-    scanf("%d",&iValue);
+	printf("Enter number");
+	scanf("%d",&iValue);
 	
-	DisplayEvenFactor(iValue);
+	bRet = Check(iValue);
 	
+	if(bRet == True)
+	{
+		printf("Divisible by 5");
+	}
+	else
+	{
+		printf("Not Divisible by 5");
+	}
 	return 0;
-	
 }
