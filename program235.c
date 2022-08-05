@@ -6,32 +6,28 @@
 
 int main()
 {
-	
 	char Fname[20];
 	char Data[100];
-    int fd = 0;
-    int iRet = 0;
 	
-	printf("Enter file name to open\n");
+	int fd = 0;
+	
+	printf("Enter the file name to create\n");
 	scanf("%s",Fname);
 	
+	printf("Enter the data that you want to write\n ");
+	scanf(" %[^'\n']s",Data);
 	
-    fd=open(Fname,O_RDWR);
-	
+	fd = creat(Fname,0777);
 	if(fd == -1)
 	{
-		printf("Unable to open the file\n");
+		printf("Unable to create the file\n");
 		return -1;
 	}
 	
-	printf("Enter the data that you want to write: \n");
-	scanf(" %[^'\n']s",Data);
+	printf("File is successfully created with FD %d\n",fd);
 	
-	printf("File is successfully opend with FD %d\n",fd);
-	
-	iRet = write(fd,Data,strlen(Data));
-	
-	printf("%d bytes gets successfully written in the file\n",iRet);
+	write(fd,Data,strlen(Data));
 	
 	return 0;
+	
 }

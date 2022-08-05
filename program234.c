@@ -2,27 +2,23 @@
 #include<stdlib.h>
 #include<unistd.h>
 #include<fcntl.h>
-#include<string.h>
 
 int main()
 {
-	
 	char Fname[20];
-	
 	int fd = 0;
 	
-	printf("Enter file name to open\n");
+	printf("Enter file name to create\n");
 	scanf("%s",Fname);
 	
-    fd=open(Fname,O_RDONLY);
-	
+	fd = creat(Fname,0777);
 	if(fd == -1)
 	{
-		printf("Unable to open the file\n");
+		printf("Unable to create the file\n");
 		return -1;
 	}
 	
-	printf("File is successfully opend with FD %d\n",fd);
+	printf("File is successfully created with FD %d\n",fd);
 	
 	return 0;
 }
